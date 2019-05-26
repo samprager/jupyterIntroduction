@@ -5,6 +5,10 @@
 
 Welcome to  MiXIL Documentation!
 ================================
+.. include:: ./README.rst
+
+All content shown below -- except for the section :doc:`a-normal-rst-file` --
+was generated from Jupyter notebooks.
 
 .. toctree::
    :maxdepth: 2
