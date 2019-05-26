@@ -410,6 +410,77 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
+<div class="section" id="Sphinx-Introduction">
+<h2>Sphinx Introduction<a class="headerlink" href="#Sphinx-Introduction" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html">getting started</a></p>
+<p><a class="reference external" href="https://nbsphinx.readthedocs.io/en/0.4.2/">jupyter and sphinx</a></p>
+<p><a class="reference external" href="https://florianwilhelm.info/2018/11/working_efficiently_with_jupyter_lab/">working efficiently with jupyter lab</a></p>
+<p><a class="reference external" href="https://nbsphinx.readthedocs.io/en/0.4.2/usage.html">nbsphinx with jupyter</a></p>
+</div>
+<div class="section" id="Building-Jupyter-journals">
+<h2>Building Jupyter journals<a class="headerlink" href="#Building-Jupyter-journals" title="Permalink to this headline">¶</a></h2>
+<p>First install nbsphinx</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbsphinx</span>
+</pre></div>
+</div>
+<p>Then rung the following to create <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> and <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sphinx</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">quickstart</span>
+</pre></div>
+</div>
+<p>Modify the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file to include (at least) the following</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;nbsphinx&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">master_doc</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span>
+
+<span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_build&#39;</span><span class="p">,</span> <span class="s1">&#39;**.ipynb_checkpoints&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Make sure that your <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files are listed in the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> toctree. For example, if the file <code class="docutils literal notranslate"><span class="pre">Introduction.ipynb</span></code> contains your jupyter notebook, the toctree should be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">2</span>
+   <span class="p">:</span><span class="n">caption</span><span class="p">:</span> <span class="n">Contents</span><span class="p">:</span>
+
+   <span class="n">Introduction</span>
+</pre></div>
+</div>
+<p>Also note that the indent must be 3 spaces.</p>
+<p>Now build using sphinx:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sphinx</span> <span class="o">.</span> <span class="n">_build</span> <span class="o">-</span><span class="n">j4</span>
+<span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>An alternate approach to creating <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> and <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> in a separate docs folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">docs</span>
+<span class="n">cd</span> <span class="n">docs</span>
+<span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Hosting-documentation-on-readthedocs">
+<h2>Hosting documentation on readthedocs<a class="headerlink" href="#Hosting-documentation-on-readthedocs" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Create an account on <a class="reference external" href="readthedocs.org">readthedocs</a></p></li>
+<li><p>Setup a git repo for your documentation</p></li>
+<li><p>Either link your github/bitbucket account or configure a specific repository manually</p></li>
+<li><p>Setup the proper branch in the Admin -&gt; Advanced Settings tab</p></li>
+<li><p>Add a requirements.txt file to your repo. For example <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> could be</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat requirements.txt
+        ipykernel
+        numpy
+        matplotlib
+        pandas
+        nbsphinx
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>In Admin-&gt;Advanced Settings, specify the path to the Requirements file in your git repo</p></li>
+<li><p>Build it!</p></li>
+</ol>
+</div>
 <div class="section" id="Embedded-Latex-in-Markdown">
 <h2>Embedded Latex in Markdown<a class="headerlink" href="#Embedded-Latex-in-Markdown" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="Inline-Code">
@@ -467,28 +538,8 @@ div.rendered_html tbody tr:hover {
 \end{equation*}</span></p>
 </div>
 </div>
-</div>
-<div class="section" id="Sphinx-Introduction">
-<h1>Sphinx Introduction<a class="headerlink" href="#Sphinx-Introduction" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html">getting started</a></p>
-<p><a class="reference external" href="https://nbsphinx.readthedocs.io/en/0.4.2/">jupyter and sphinx</a></p>
-<p><a class="reference external" href="https://florianwilhelm.info/2018/11/working_efficiently_with_jupyter_lab/">working efficiently with jupyter lab</a></p>
-<p><a class="reference external" href="https://nbsphinx.readthedocs.io/en/0.4.2/usage.html">nbsphinx with jupyter</a></p>
-<p>One approach:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">docs</span>
-<span class="n">cd</span> <span class="n">docs</span>
-<span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span>
-</pre></div>
-</div>
-<p>Another approach:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sphinx</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">quickstart</span>
-<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">sphinx</span> <span class="o">.</span> <span class="n">_build</span> <span class="o">-</span><span class="n">j4</span>
-<span class="n">make</span> <span class="n">html</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="Python-Example">
-<h1>Python Example<a class="headerlink" href="#Python-Example" title="Permalink to this headline">¶</a></h1>
+<h2>Python Example<a class="headerlink" href="#Python-Example" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -526,7 +577,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/Introduction_4_0.png" src="_images/Introduction_4_0.png" />
+<img alt="_images/Introduction_5_0.png" src="_images/Introduction_5_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -547,7 +598,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/Introduction_5_0.png" src="_images/Introduction_5_0.png" />
+<img alt="_images/Introduction_6_0.png" src="_images/Introduction_6_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -568,7 +619,8 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/Introduction_6_0.png" src="_images/Introduction_6_0.png" />
+<img alt="_images/Introduction_7_0.png" src="_images/Introduction_7_0.png" />
+</div>
 </div>
 </div>
 </div>
@@ -594,11 +646,13 @@ div.rendered_html tbody tr:hover {
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">JupyterLab Getting Started Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Installation-(MacOS)">Installation (MacOS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Sphinx-Introduction">Sphinx Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Building-Jupyter-journals">Building Jupyter journals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Hosting-documentation-on-readthedocs">Hosting documentation on readthedocs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Embedded-Latex-in-Markdown">Embedded Latex in Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Python-Example">Python Example</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#Sphinx-Introduction">Sphinx Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Python-Example">Python Example</a></li>
 </ul>
 
 <div class="relations">
