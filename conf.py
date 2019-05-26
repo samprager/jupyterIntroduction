@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Creating Documentation with JupyterLab'
+project = 'JupyterLab Introduction'
 copyright = '2019, Samuel Prager, University of Southern California'
 author = 'Samuel Prager'
 
@@ -52,6 +52,14 @@ exclude_patterns = ['_build', '**.ipynb_checkpoints', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'alabaster'
+
+html_theme_options = {
+#    'logo': 'logo.png',
+    'github_user': 'samprager',
+    'github_repo': 'jupyterIntroduction',
+    'description': 'Tutorials and examples for creating documentation with JupyterLabs',
+    
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
