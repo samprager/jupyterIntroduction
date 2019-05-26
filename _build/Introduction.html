@@ -281,6 +281,14 @@
 <li><p>In Admin-&gt;Advanced Settings, specify the path to the Requirements file in your git repo</p></li>
 <li><p>Build it!</p></li>
 </ol>
+<div class="section" id="Configuring-Automatic-Updates">
+<h3>Configuring Automatic Updates<a class="headerlink" href="#Configuring-Automatic-Updates" title="Permalink to this headline">¶</a></h3>
+<p>readthedocs.org will automatically rebuild your documentation every time a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> occurs. To enable this you need to setup a webhook. To do this:</p>
+<ol class="arabic simple">
+<li><p>On readthedocs.org in your project go to Admin -&gt; Integration and Add Integration to generate a webhook url</p></li>
+<li><p>On github, under project Settings-&gt;Webhooks, add a webhook with this url</p></li>
+</ol>
+</div>
 </div>
 <div class="section" id="Embedded-Latex-in-Markdown">
 <h2>Embedded Latex in Markdown<a class="headerlink" href="#Embedded-Latex-in-Markdown" title="Permalink to this headline">¶</a></h2>
@@ -376,7 +384,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pythonexample.html">Python Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="octaveexample.html">Octave in JupyterLabs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="octaveexample.html">Octave Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sosexample.html">Script of Scripts (SOS)</a></li>
 </ul>
 
