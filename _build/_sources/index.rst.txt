@@ -11,6 +11,10 @@ Welcome to Introduction's documentation!
    :caption: Contents:
    
    Introduction
+   pythonexample
+   octaveexample
+   sosexample
+   latexexample
 
 Indices and tables
 ==================

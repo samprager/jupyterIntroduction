@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage[obeyspaces]{url}
+
+\begin{document}
+
+\title{{\LaTeX} Example}
+% \title{LaTeX Example}
+
+
+\maketitle
+
+\section{Introduction}
+
+This document was created in JupyterLab using \path{jupyterlab_latex}.
+
+\begin{enumerate}
+    \item{First Install the server extension:}
+        \subitem{\path{pip3 install jupyterlab_latex}}
+    \item{Install the lab extension (enables UI for latex preview)}
+        \subitem{\path{jupyter labextension install @jupyterlab/latex}}
+    \item{To use just right click on a .tex document in jupyterLab and select ``Show Latex Preview''}
+\end{enumerate}
+
+Now you're ready to compile Latex!
+
+\begin{align}
+    c & \sqrt{a^2 + b^2}
+\end{align}
+
+\end{document}
