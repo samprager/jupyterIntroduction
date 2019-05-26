@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Documentation with JupyterLab'
-copyright = '2019, Samuel Prager'
+project = 'Creating Documentation with JupyterLab'
+copyright = '2019, Samuel Prager, University of Southern California'
 author = 'Samuel Prager'
 
 # The full version, including alpha/beta/rc tags
