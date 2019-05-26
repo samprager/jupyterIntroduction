@@ -5,6 +5,9 @@
 
 Welcome to  MiXIL Documentation!
 ================================
+.. include:: ./README.rst
+
+All content shown below was generated from Jupyter notebooks.
 
 .. toctree::
    :maxdepth: 2
