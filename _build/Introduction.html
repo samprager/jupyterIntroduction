@@ -39,11 +39,7 @@
 <div class="section" id="Installation-(MacOS)">
 <h2>Installation (MacOS)<a class="headerlink" href="#Installation-(MacOS)" title="Permalink to this headline">¶</a></h2>
 <p>These installation instructions are for MacOS with homebrew installed. It uses a homebrew (brew) and pip (python3, pip3) environment. I have chosen to install with python 3, however python 2.7 installation is also possible.</p>
-<p>Additional instructions and alternate installation methods (ie. conda) can be found here:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">jupyter notebook installation instructions</a></p></li>
-<li><p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">jupyterlab installation</a></p></li>
-</ul>
+<p>Additional instructions and alternate installation methods (ie. conda) can be found here: * <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/install.html">jupyter notebook installation instructions</a> * <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">jupyterlab installation</a></p>
 <div class="section" id="To-install-with-homebrew/pip:">
 <h3>To install with homebrew/pip:<a class="headerlink" href="#To-install-with-homebrew/pip:" title="Permalink to this headline">¶</a></h3>
 <p>Update brew/check for issues</p>
@@ -294,11 +290,12 @@
 </ol>
 </div>
 </div>
-<div class="section" id="Embedded-Latex-in-Markdown">
-<h2>Embedded Latex in Markdown<a class="headerlink" href="#Embedded-Latex-in-Markdown" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Embedded-Latex-Example">
+<h1>Embedded Latex Example<a class="headerlink" href="#Embedded-Latex-Example" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Inline-Code">
-<h3>Inline Code<a class="headerlink" href="#Inline-Code" title="Permalink to this headline">¶</a></h3>
-<p>You can embed latex equations inline: <span class="math notranslate nohighlight">\(c = \sqrt{a^2 + b^2}\)</span> using <code class="docutils literal notranslate"><span class="pre">$</span></code></p>
+<h2>Inline Code<a class="headerlink" href="#Inline-Code" title="Permalink to this headline">¶</a></h2>
+<p>In a Markdown block, you can embed latex equations inline: <span class="math notranslate nohighlight">\(c = \sqrt{a^2 + b^2}\)</span> using <code class="docutils literal notranslate"><span class="pre">$</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$c = \sqrt{a^2 + b^2}$
 </pre></div>
 </div>
@@ -321,7 +318,7 @@
 <p>end{align}`</p>
 </div>
 <div class="section" id="Maxwells-Equations">
-<h3>Maxwells Equations<a class="headerlink" href="#Maxwells-Equations" title="Permalink to this headline">¶</a></h3>
+<h2>Maxwells Equations<a class="headerlink" href="#Maxwells-Equations" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">align</span><span class="p">}</span>
 \<span class="n">nabla</span> \<span class="n">times</span> \<span class="n">vec</span><span class="p">{</span>\<span class="n">mathbf</span><span class="p">{</span><span class="n">E</span><span class="p">}}</span> <span class="o">&amp;=</span> <span class="o">-</span> \<span class="n">frac</span><span class="p">{</span>\<span class="n">partial</span>\<span class="n">vec</span><span class="p">{</span>\<span class="n">mathbf</span><span class="p">{</span><span class="n">B</span><span class="p">}}}{</span>\<span class="n">partial</span> <span class="n">t</span><span class="p">}</span>\\
 \<span class="n">nabla</span> \<span class="n">times</span> \<span class="n">vec</span><span class="p">{</span>\<span class="n">mathbf</span><span class="p">{</span><span class="n">B</span><span class="p">}}</span> <span class="o">&amp;</span> <span class="o">=</span> \<span class="n">mu_0</span> \<span class="n">left</span><span class="p">(</span>\<span class="n">vec</span><span class="p">{</span>\<span class="n">mathbf</span><span class="p">{</span><span class="n">J</span><span class="p">}}</span> <span class="o">+</span> \<span class="n">epsilon_0</span> \<span class="n">frac</span><span class="p">{</span>\<span class="n">partial</span>\<span class="n">vec</span><span class="p">{</span>\<span class="n">mathbf</span><span class="p">{</span><span class="n">E</span><span class="p">}}}{</span>\<span class="n">partial</span> <span class="n">t</span><span class="p">}</span> \<span class="n">right</span><span class="p">)</span> \\
@@ -338,7 +335,7 @@
 \end{align}</span></p>
 </div>
 <div class="section" id="The-Cauchy-Schwarz-Inequality">
-<h3>The Cauchy-Schwarz Inequality<a class="headerlink" href="#The-Cauchy-Schwarz-Inequality" title="Permalink to this headline">¶</a></h3>
+<h2>The Cauchy-Schwarz Inequality<a class="headerlink" href="#The-Cauchy-Schwarz-Inequality" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">equation</span><span class="o">*</span><span class="p">}</span>
 \<span class="n">left</span><span class="p">(</span> \<span class="n">sum_</span><span class="p">{</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">}</span><span class="o">^</span><span class="n">n</span> <span class="n">a_k</span> <span class="n">b_k</span> \<span class="n">right</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> \<span class="n">leq</span> \<span class="n">left</span><span class="p">(</span> \<span class="n">sum_</span><span class="p">{</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">}</span><span class="o">^</span><span class="n">n</span> <span class="n">a_k</span><span class="o">^</span><span class="mi">2</span> \<span class="n">right</span><span class="p">)</span> \<span class="n">left</span><span class="p">(</span> \<span class="n">sum_</span><span class="p">{</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">}</span><span class="o">^</span><span class="n">n</span> <span class="n">b_k</span><span class="o">^</span><span class="mi">2</span> \<span class="n">right</span><span class="p">)</span>
 \<span class="n">end</span><span class="p">{</span><span class="n">equation</span><span class="o">*</span><span class="p">}</span>
@@ -347,7 +344,6 @@
 <p><span class="math">\begin{equation*}
 \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
 \end{equation*}</span></p>
-</div>
 </div>
 </div>
 
@@ -384,12 +380,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#Sphinx-Introduction">Sphinx Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Building-Jupyter-journals">Building Jupyter journals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Hosting-documentation-on-readthedocs.org">Hosting documentation on readthedocs.org</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Embedded-Latex-in-Markdown">Embedded Latex in Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#Embedded-Latex-Example">Embedded Latex Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Inline-Code">Inline Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Maxwells-Equations">Maxwells Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#The-Cauchy-Schwarz-Inequality">The Cauchy-Schwarz Inequality</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pythonexample.html">Python Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="octaveexample.html">Octave Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sosexample.html">Script of Scripts (SOS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sosexample.html">SOS Multiple Language Example</a></li>
 </ul>
 
 <div class="relations">

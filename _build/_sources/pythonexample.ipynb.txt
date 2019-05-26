@@ -43,7 +43,7 @@
     "\n",
     "n = np.arange(0,N-1)-N/2;\n",
     "t = n/fs;\n",
-    "# data = np.sin(2*np.pi*fc*t);\n",
+    "\n",
     "s = np.exp(1j*np.pi*.5*(bw/t[-1])*(t**2));\n",
     "\n",
     "plt.figure;\n",
