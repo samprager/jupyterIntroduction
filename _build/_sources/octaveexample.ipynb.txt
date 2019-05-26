@@ -25,7 +25,8 @@
     "If SOS is installed, octave support can be installed (same for both matlab and octave) with:\n",
     "```\n",
     "pip install sos-matlab\n",
-    "```"
+    "```\n",
+    "[sos octave/matlab user guide](https://vatlab.github.io/sos-docs/doc/user_guide/sos_matlab.html)"
    ]
   },
   {
