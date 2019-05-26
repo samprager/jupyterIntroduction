@@ -7,11 +7,10 @@ Welcome to Introduction's documentation!
 ========================================
 
 .. toctree::
-   Introduction.ipynb
    :maxdepth: 2
    :caption: Contents:
-
-
+   
+   Introduction
 
 Indices and tables
 ==================

@@ -31,8 +31,8 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-#    'nbsphinx',
-#    'sphinx.ext.mathjax',
+    'nbsphinx',
+    'sphinx.ext.mathjax',
 ]
 
 master_doc = 'index'
