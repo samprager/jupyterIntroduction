@@ -5,7 +5,7 @@ This project provides guides for installing and setting up JupyterLab notebooks 
 
 All documentation was generated from JupyterLab_ notebooks using nbsphinx_.
 
-Example Jupyter notebooks are provided for python, octave and SOS. The Jupyter notebooks can be run interactively by following the installation instructions, cloning the source repository, and opening JupyterLab:
+Example Jupyter notebooks are provided for python, octave/Matlab and SOS. The Jupyter notebooks can be run interactively by following the installation instructions, cloning the source repository, and opening JupyterLab:
     
 If JupyterLab is already installed:
     #. ``git clone https://github.com/samprager/jupyterIntroduction.git``
