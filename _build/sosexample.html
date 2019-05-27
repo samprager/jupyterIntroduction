@@ -309,9 +309,11 @@ hello world
 <div class="section" id="Sharing-variables-between-kernels">
 <h3>Sharing variables between kernels<a class="headerlink" href="#Sharing-variables-between-kernels" title="Permalink to this headline">¶</a></h3>
 <p>Using <a class="reference external" href="https://vatlab.github.io/sos-docs/doc/documentation/SoS_Magics.html#put">SOS magic keywords</a>, variables can be shared between kernels. This is still a little buggy but should improve with future versions of JupyterLab.</p>
+<div class="section" id="Octave-Block">
+<h4>Octave Block<a class="headerlink" href="#Octave-Block" title="Permalink to this headline">¶</a></h4>
 <p>Generate a vector with Matlab/Octave in an octave block:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-sos notranslate"><div class="highlight"><pre>
@@ -325,7 +327,26 @@ hello world
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">i</span><span class="o">*</span><span class="n">pi</span><span class="o">*.</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">bw</span><span class="o">/</span><span class="n">t</span><span class="p">(</span><span class="n">end</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="p">));</span>
 
-<span class="o">%</span> <span class="n">vector</span> <span class="n">parsing</span> <span class="ow">is</span> <span class="n">still</span> <span class="n">buggy</span><span class="p">,</span> <span class="n">so</span> <span class="n">let</span><span class="s1">&#39;s help out SOS a little bit by passing as a string</span>
+<span class="n">figure</span><span class="p">;</span> <span class="n">hold</span> <span class="n">on</span><span class="p">;</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span><span class="n">real</span><span class="p">(</span><span class="n">s</span><span class="p">));</span> <span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span><span class="n">imag</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;chirp&#39;</span><span class="p">);</span> <span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (us)&#39;</span><span class="p">);</span> <span class="n">legend</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="s1">&#39;Q&#39;</span><span class="p">);</span> <span class="n">xlim</span><span class="p">(</span><span class="mf">1e6</span><span class="o">*</span><span class="p">[</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">t</span><span class="p">(</span><span class="n">end</span><span class="p">)]);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/sosexample_7_0.png" src="_images/sosexample_7_0.png" />
+</div>
+</div>
+<p>Plots in octave look bad. Lets try plotting with python instead by passing the data with SOS</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-sos notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span> <span class="n">vector</span> <span class="n">parsing</span> <span class="ow">is</span> <span class="n">still</span> <span class="n">buggy</span><span class="p">,</span> <span class="n">so</span> <span class="n">let</span><span class="s1">&#39;s help out SOS a little bit by passing as a string</span>
 <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">real</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="n">imag</span><span class="p">(</span><span class="n">s</span><span class="p">)];</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">(:)</span><span class="o">.</span><span class="s1">&#39;;</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">sprintf</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1"> + </span><span class="si">%i</span><span class="s1">j,&#39;</span> <span class="p">,</span> <span class="n">s</span><span class="p">);</span>
@@ -346,6 +367,9 @@ hello world
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="SOS-Block">
+<h4>SOS Block<a class="headerlink" href="#SOS-Block" title="Permalink to this headline">¶</a></h4>
 <p>In an SOS block, share variables between kernels using the <code class="docutils literal notranslate"><span class="pre">%get</span></code> magic:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -358,6 +382,9 @@ hello world
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="Python-Block">
+<h4>Python Block<a class="headerlink" href="#Python-Block" title="Permalink to this headline">¶</a></h4>
 <p>Now in a python3 block use the <code class="docutils literal notranslate"><span class="pre">%expand</span></code> magic to load vectors from octave and plot with python:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -387,7 +414,8 @@ hello world
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/sosexample_13_0.png" src="_images/sosexample_13_0.png" />
+<img alt="_images/sosexample_15_0.png" src="_images/sosexample_15_0.png" />
+</div>
 </div>
 </div>
 </div>
