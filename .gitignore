@@ -3,3 +3,4 @@ __pycache__/
 .ipynb_checkpoints/
 nbsphinx.egg-info/
 .python-version
+_build
