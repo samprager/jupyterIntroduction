@@ -19,6 +19,8 @@ These notebooks can also be run interactively in binder!
 .. image:: https://mybinder.org/badge_logo.svg
   :target: https://mybinder.org/v2/gh/samprager/jupyterIntroduction/master
   :width: 150 px
+  :align: center
+
 
 Online documentation:
     https://jupyterintroduction.readthedocs.io
