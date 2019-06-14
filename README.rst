@@ -15,8 +15,11 @@ If JupyterLab is already installed:
     #. ``jupyter lab``
 
 These notebooks can also be run interactively in binder!
-.. image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/samprager/jupyterIntroduction/master
+.. container:: binder-badge
+
+  .. image:: https://mybinder.org/badge_logo.svg
+    :target: https://mybinder.org/v2/gh/samprager/jupyterIntroduction/master
+    :width: 150 px
 
 Online documentation:
     https://jupyterintroduction.readthedocs.io
