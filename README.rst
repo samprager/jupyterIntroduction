@@ -22,10 +22,12 @@ These notebooks can also be run interactively in binder!
   :align: center
 
 or in Google Colab!
+
 .. image:: https://colab.research.google.com/assets/colab-badge.svg
   :target: https://colab.research.google.com/github/samprager/jupyterIntroduction/master
   :width: 150 px
   :align: center
+
 
 Online documentation:
     https://jupyterintroduction.readthedocs.io
