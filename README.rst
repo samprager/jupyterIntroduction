@@ -24,7 +24,7 @@ These notebooks can also be run interactively in binder!
 or in Google Colab!
 
 .. image:: https://colab.research.google.com/assets/colab-badge.svg
-  :target: https://colab.research.google.com/github/samprager/jupyterIntroduction/master
+  :target: https://colab.research.google.com/github/samprager/jupyterIntroduction/blob/master
   :width: 150 px
   :align: center
 
