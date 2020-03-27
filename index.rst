@@ -18,6 +18,7 @@ All content shown below was generated from Jupyter notebooks.
    octaveexample
    sosexample
    latexexample
+   juliaexample
 
 Indices and tables
 ==================
