@@ -57,8 +57,8 @@ html_theme_options = {
 #    'logo': 'logo.png',
     'github_user': 'samprager',
     'github_repo': 'jupyterIntroduction',
-    'description': 'Tutorials and examples for creating documentation with JupyterLabs',
-    
+    'description': 'Tutorials and examples for creating documentation with JupyterLabs. \nGithub:@samprager\nEmail: prager.sam@gmail.com',
+
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
