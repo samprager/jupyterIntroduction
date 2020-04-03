@@ -57,7 +57,7 @@ html_theme_options = {
 #    'logo': 'logo.png',
     'github_user': 'samprager',
     'github_repo': 'jupyterIntroduction',
-    'description': 'Tutorials and examples for creating documentation with JupyterLabs. \nGithub:@samprager\nEmail: prager.sam@gmail.com',
+    'description': 'Tutorials and examples for creating documentation with JupyterLabs. \nGithub:@samprager \nEmail:prager.sam@gmail.com',
 
 }
 
