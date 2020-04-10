@@ -4,7 +4,6 @@ matplotlib
 pandas
 nbsphinx
 octave_kernel
-jupyterlab-latex
 sos
 sos-notebook
 sos-matlab
